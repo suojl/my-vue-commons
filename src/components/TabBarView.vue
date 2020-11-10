@@ -31,7 +31,7 @@ export default {
           routePath: "/category",
           showMark: true,
           markNumber: "2",
-          needAnimat: true
+          needAnimat: false
         },
         {
           itemTitle: "我的",

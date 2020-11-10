@@ -1,6 +1,14 @@
 <!--  -->
 <template>
-<div class=''>我的</div>
+  <div class="mine-container">
+    我的
+    <div class="transition-model">
+      <transition name="model_test" mode="out-in">
+        <button v-if="on_off" key="on" @click="on_off = !on_off">on</button>
+        <button v-if="!on_off" key="off" @click="on_off = !on_off">off</button>
+      </transition>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -8,40 +16,61 @@
 // 例如：import 《组件名称》 from '《组件路径》';
 
 export default {
-// import引入的组件需要注入到对象中才能使用
-props: {},
-components: {},
-data() {
-// 这里存放数据
-return {
-
+  // import引入的组件需要注入到对象中才能使用
+  props: {},
+  components: {},
+  data() {
+    // 这里存放数据
+    return {
+      on_off: false,
+    };
+  },
+  // 监听属性 类似于data概念
+  computed: {},
+  // 监控data中的数据变化
+  watch: {},
+  // 方法集合
+  methods: {},
+  // 生命周期 - 创建完成（可以访问当前this实例）
+  created() {},
+  // 生命周期 - 挂载完成（可以访问DOM元素）
+  mounted() {},
+  beforeCreate() {}, // 生命周期 - 创建之前
+  beforeMount() {}, // 生命周期 - 挂载之前
+  beforeUpdate() {}, // 生命周期 - 更新之前
+  updated() {}, // 生命周期 - 更新之后
+  beforeDestroy() {}, // 生命周期 - 销毁之前
+  destroyed() {}, // 生命周期 - 销毁完成
+  activated() {}, // 如果页面有keep-alive缓存功能，这个函数会触发
 };
-},
-// 监听属性 类似于data概念
-computed: {},
-// 监控data中的数据变化
-watch: {},
-// 方法集合
-methods: {
-
-},
-// 生命周期 - 创建完成（可以访问当前this实例）
-created() {
-
-},
-// 生命周期 - 挂载完成（可以访问DOM元素）
-mounted() {
-
-},
-beforeCreate() {}, // 生命周期 - 创建之前
-beforeMount() {}, // 生命周期 - 挂载之前
-beforeUpdate() {}, // 生命周期 - 更新之前
-updated() {}, // 生命周期 - 更新之后
-beforeDestroy() {}, // 生命周期 - 销毁之前
-destroyed() {}, // 生命周期 - 销毁完成
-activated() {}, // 如果页面有keep-alive缓存功能，这个函数会触发
-}
 </script>
-<style scoped> 
-
+<style lang='less' scoped>
+.mine-container {
+  .transition-model {
+    background-color: bisque;
+  }
+  .model_test-enter-active {
+    animation: bounce-in 3s linear;
+  }
+  .model_test-leave-active {
+    animation: bounce-in 0.3s reverse linear;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.6);
+      /* opacity: 0; */
+      transform: translateX(110px);
+    }
+    50% {
+      transform: scale(0.8);
+      /* opacity: 0.5; */
+      transform: translateX(55px);
+    }
+    100% {
+      transform: scale(1);
+      /* opacity: 1; */
+      transform: translateX(0px);
+    }
+  }
+}
 </style>
