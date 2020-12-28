@@ -11,6 +11,7 @@
         "animate.min.css": "0.0.3",
         "core-js": "^3.6.5",
         "normalize.css": "^8.0.1",
+        "vconsole": "^3.3.4",
         "vue": "^2.6.11",
         "vue-router": "^3.4.8",
         "vue-scroller": "^2.2.4"

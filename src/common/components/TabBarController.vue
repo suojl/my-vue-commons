@@ -101,7 +101,7 @@ export default {
 
 @media (device-width: 375px) and (device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) {
   .tab-bar-wrapper {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 }
 </style>
