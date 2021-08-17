@@ -7,6 +7,8 @@ import vconsole from 'vconsole';
 const v = new vconsole();
 Vue.use(VueScroller);
 
+
+
 Vue.config.productionTip = false
 
 new Vue({
